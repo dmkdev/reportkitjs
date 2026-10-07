@@ -1,0 +1,93 @@
+.editor {
+  display: grid;
+  grid-template-columns: 220px 1fr 300px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'toolbar toolbar toolbar'
+    'palette canvas properties';
+  gap: 0;
+  height: 100%;
+  min-height: 480px;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 14px;
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+.toolbar {
+  grid-area: toolbar;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.toolbarTitle {
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+.toolbarSpacer {
+  flex: 1;
+}
+
+.toolbarButton {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.toolbarButton:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+.toolbarButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.toolbarButtonPrimary {
+  composes: toolbarButton;
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.toolbarButtonPrimary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.palette {
+  grid-area: palette;
+  border-right: 1px solid #e2e8f0;
+  background: #ffffff;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.canvas {
+  grid-area: canvas;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.properties {
+  grid-area: properties;
+  border-left: 1px solid #e2e8f0;
+  background: #ffffff;
+  overflow-y: auto;
+  padding: 12px;
+}

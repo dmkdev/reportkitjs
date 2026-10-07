@@ -1,0 +1,70 @@
+.viewer {
+  box-sizing: border-box;
+  max-width: var(--rk-max-width, 960px);
+  margin: 0 auto;
+  padding: 24px 16px;
+  background: var(--rk-bg, #ffffff);
+  color: var(--rk-text, #0f172a);
+  font-family: var(--rk-font-family, Inter, system-ui, sans-serif);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.viewer *,
+.viewer *::before,
+.viewer *::after {
+  box-sizing: border-box;
+}
+
+.reportTitle {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.reportDescription {
+  margin: 0 0 20px;
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.95rem;
+}
+
+.reportMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 24px;
+  padding: 10px 14px;
+  border: 1px solid var(--rk-border, #e2e8f0);
+  border-radius: 8px;
+  background: var(--rk-surface, #f8fafc);
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.8rem;
+}
+
+.reportMeta dt {
+  display: inline;
+  font-weight: 600;
+  color: var(--rk-text, #0f172a);
+}
+
+.reportMeta dd {
+  display: inline;
+  margin: 0 0 0 4px;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.errorBanner {
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,103 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 100%;
+}
+
+.canvasEmpty {
+  padding: 40px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  color: #64748b;
+  text-align: center;
+  font-size: 14px;
+}
+
+.block {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.block:hover {
+  border-color: #bfdbfe;
+}
+
+.blockSelected {
+  composes: block;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.blockDragging {
+  opacity: 0.4;
+}
+
+.blockHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.blockType {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.blockActions {
+  margin-left: auto;
+  display: flex;
+  gap: 2px;
+}
+
+.blockBody {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.blockPreview {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.dropZone {
+  height: 10px;
+  border-radius: 4px;
+  transition:
+    background 0.1s ease,
+    height 0.1s ease;
+}
+
+.dropZoneActive {
+  height: 32px;
+  background: #dbeafe;
+  border: 1px dashed #2563eb;
+}
+
+.sectionBody {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}

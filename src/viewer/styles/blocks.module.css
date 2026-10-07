@@ -1,0 +1,302 @@
+/* ------------------------------------------------------------------ */
+/* Header                                                              */
+/* ------------------------------------------------------------------ */
+
+.header {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--rk-text, #0f172a);
+}
+
+.header1 {
+  font-size: 1.6rem;
+  margin-top: 8px;
+}
+
+.header2 {
+  font-size: 1.3rem;
+  margin-top: 4px;
+}
+
+.header3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Text                                                                */
+/* ------------------------------------------------------------------ */
+
+.text {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.text a {
+  color: var(--rk-primary, #2563eb);
+}
+
+.text code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--rk-surface, #f8fafc);
+  border: 1px solid var(--rk-border, #e2e8f0);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+}
+
+/* ------------------------------------------------------------------ */
+/* KPI                                                                 */
+/* ------------------------------------------------------------------ */
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.kpiCard {
+  padding: 14px 16px;
+  border: 1px solid var(--rk-border, #e2e8f0);
+  border-radius: 10px;
+  background: var(--rk-surface, #f8fafc);
+}
+
+.kpiTitle {
+  margin: 0 0 6px;
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kpiValue {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--rk-text, #0f172a);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpiTrend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.kpiTrendUp {
+  color: #16a34a;
+}
+
+.kpiTrendDown {
+  color: #dc2626;
+}
+
+.kpiTrendFlat {
+  color: var(--rk-text-muted, #64748b);
+}
+
+/* ------------------------------------------------------------------ */
+/* Table                                                               */
+/* ------------------------------------------------------------------ */
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--rk-border, #e2e8f0);
+  border-radius: 10px;
+}
+
+.tableTitle {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--rk-border, #e2e8f0);
+}
+
+.table th {
+  background: var(--rk-surface, #f8fafc);
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table td.alignCenter {
+  text-align: center;
+}
+
+.table td.alignRight {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th.alignCenter {
+  text-align: center;
+}
+
+.table th.alignRight {
+  text-align: right;
+}
+
+.tableEmpty {
+  padding: 16px;
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--rk-text-muted, #64748b);
+}
+
+.pagination button {
+  padding: 4px 10px;
+  border: 1px solid var(--rk-border, #e2e8f0);
+  border-radius: 6px;
+  background: var(--rk-bg, #ffffff);
+  color: var(--rk-text, #0f172a);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ------------------------------------------------------------------ */
+/* Chart                                                               */
+/* ------------------------------------------------------------------ */
+
+.chartBlock {
+  border: 1px solid var(--rk-border, #e2e8f0);
+  border-radius: 10px;
+  background: var(--rk-surface, #f8fafc);
+  padding: 14px;
+}
+
+.chartTitle {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chartContainer {
+  position: relative;
+  width: 100%;
+}
+
+.chartSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Divider                                                             */
+/* ------------------------------------------------------------------ */
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--rk-border, #e2e8f0);
+  margin: 4px 0;
+}
+
+.dividerDashed {
+  border-top-style: dashed;
+}
+
+.dividerDotted {
+  border-top-style: dotted;
+}
+
+/* ------------------------------------------------------------------ */
+/* Image                                                               */
+/* ------------------------------------------------------------------ */
+
+.imageWrap {
+  text-align: center;
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.imageCaption {
+  margin-top: 6px;
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.8rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Section                                                             */
+/* ------------------------------------------------------------------ */
+
+.section {
+  padding: 16px;
+  border: 1px solid var(--rk-border, #e2e8f0);
+  border-radius: 10px;
+  background: var(--rk-surface, #f8fafc);
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.sectionBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Data source status                                                  */
+/* ------------------------------------------------------------------ */
+
+.loading {
+  padding: 16px;
+  color: var(--rk-text-muted, #64748b);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.error {
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,183 @@
+{
+  "$schema": "https://reportkitjs.dev/schema.json",
+  "version": "1.0.0",
+  "meta": {
+    "id": "demo-report-1",
+    "title": "Sales Report Q3 2026",
+    "description": "Quarterly sales overview: revenue, costs and regional breakdown.",
+    "author": "Analytics Team",
+    "createdAt": "2026-09-01T00:00:00Z",
+    "updatedAt": "2026-09-30T00:00:00Z"
+  },
+  "theme": {
+    "primaryColor": "#2563eb",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "maxWidth": 960
+  },
+  "dataSources": [
+    {
+      "id": "ds-monthly",
+      "name": "Monthly Sales",
+      "type": "embedded",
+      "data": [
+        { "month": "Jan", "revenue": 42000, "cost": 28000, "orders": 310 },
+        { "month": "Feb", "revenue": 48500, "cost": 30100, "orders": 342 },
+        { "month": "Mar", "revenue": 51200, "cost": 31800, "orders": 355 },
+        { "month": "Apr", "revenue": 47800, "cost": 30900, "orders": 331 },
+        { "month": "May", "revenue": 55400, "cost": 33200, "orders": 388 },
+        { "month": "Jun", "revenue": 61000, "cost": 35600, "orders": 412 },
+        { "month": "Jul", "revenue": 58200, "cost": 34900, "orders": 398 },
+        { "month": "Aug", "revenue": 63500, "cost": 36800, "orders": 425 },
+        { "month": "Sep", "revenue": 69800, "cost": 38900, "orders": 461 }
+      ]
+    },
+    {
+      "id": "ds-regions",
+      "name": "Regional Sales",
+      "type": "embedded",
+      "data": [
+        { "region": "North", "revenue": 214000 },
+        { "region": "South", "revenue": 158000 },
+        { "region": "East", "revenue": 121000 },
+        { "region": "West", "revenue": 98000 }
+      ]
+    }
+  ],
+  "blocks": [
+    { "id": "b-header", "type": "header", "props": { "text": "Q3 2026 Overview", "level": 1 } },
+    {
+      "id": "b-intro",
+      "type": "text",
+      "props": {
+        "content": "Revenue grew **12.5%** quarter over quarter, driven by the North region. Costs stayed flat in absolute terms, improving the margin by ~2pp.",
+        "markdown": true
+      }
+    },
+    {
+      "id": "b-kpi-revenue",
+      "type": "kpi",
+      "props": {
+        "title": "Total Revenue",
+        "value": { "dataSourceId": "ds-monthly", "field": "revenue", "aggregation": "sum" },
+        "format": "currency",
+        "currency": "USD",
+        "trend": { "value": 12.5, "direction": "up" }
+      }
+    },
+    {
+      "id": "b-kpi-orders",
+      "type": "kpi",
+      "props": {
+        "title": "Orders",
+        "value": { "dataSourceId": "ds-monthly", "field": "orders", "aggregation": "sum" },
+        "format": "number",
+        "trend": { "value": 8.1, "direction": "up" }
+      }
+    },
+    {
+      "id": "b-kpi-margin",
+      "type": "kpi",
+      "props": {
+        "title": "Avg. Margin",
+        "value": 41.2,
+        "format": "percent"
+      }
+    },
+    { "id": "b-divider-1", "type": "divider", "props": { "style": "solid" } },
+    {
+      "id": "b-chart-line",
+      "type": "chart",
+      "props": {
+        "chartType": "line",
+        "dataSourceId": "ds-monthly",
+        "xField": "month",
+        "series": [
+          { "field": "revenue", "label": "Revenue" },
+          { "field": "cost", "label": "Cost" }
+        ],
+        "title": "Monthly Revenue vs Cost",
+        "showLegend": true,
+        "showGrid": true
+      }
+    },
+    {
+      "id": "b-chart-bar",
+      "type": "chart",
+      "props": {
+        "chartType": "bar",
+        "dataSourceId": "ds-monthly",
+        "xField": "month",
+        "series": [{ "field": "orders", "label": "Orders" }],
+        "title": "Orders per Month",
+        "showGrid": true
+      }
+    },
+    {
+      "id": "b-section",
+      "type": "section",
+      "props": {
+        "title": "Regional Breakdown",
+        "blocks": [
+          {
+            "id": "b-chart-pie",
+            "type": "chart",
+            "props": {
+              "chartType": "pie",
+              "dataSourceId": "ds-regions",
+              "xField": "region",
+              "series": [{ "field": "revenue", "label": "Revenue" }],
+              "title": "Revenue by Region",
+              "showLegend": true
+            }
+          },
+          {
+            "id": "b-table",
+            "type": "table",
+            "props": {
+              "dataSourceId": "ds-monthly",
+              "columns": [
+                { "field": "month", "label": "Month" },
+                {
+                  "field": "revenue",
+                  "label": "Revenue",
+                  "format": "currency",
+                  "currency": "USD",
+                  "align": "right"
+                },
+                {
+                  "field": "cost",
+                  "label": "Cost",
+                  "format": "currency",
+                  "currency": "USD",
+                  "align": "right"
+                },
+                { "field": "orders", "label": "Orders", "align": "right" }
+              ],
+              "title": "Monthly Details",
+              "pagination": { "pageSize": 6 }
+            }
+          }
+        ]
+      }
+    },
+    { "id": "b-divider-2", "type": "divider", "props": { "style": "dashed" } },
+    {
+      "id": "b-image",
+      "type": "image",
+      "props": {
+        "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='120'><rect width='640' height='120' fill='%23f1f5f9'/><text x='320' y='66' font-family='sans-serif' font-size='20' fill='%2364748b' text-anchor='middle'>Placeholder figure</text></svg>",
+        "alt": "Placeholder figure",
+        "caption": "Fig 1. Quarterly trend (placeholder)",
+        "maxWidth": 640
+      }
+    },
+    {
+      "id": "b-footer",
+      "type": "text",
+      "props": {
+        "content": "_Generated by ReportkitJs demo._",
+        "markdown": true
+      }
+    }
+  ]
+}
