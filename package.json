@@ -47,7 +47,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run build && npm test"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -93,5 +94,13 @@
     "editor",
     "charts"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmkdev/reportkitjs.git"
+  },
+  "author": "dmkdev",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }
